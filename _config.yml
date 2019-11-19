@@ -1,26 +1,20 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
 # Permalinks
-permalink:        pretty
-relative_permalinks: true
+#
+permalink:           /:categories/:year/:month/:day/:title/
 
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
-baseurl:          https://github.com/mmtechslv/mmtechslv.github.io/
+title:               Farid's Personal Blog
+tagline:             Farid MUSA BLOG
+description:         Some Amazing Description
+url:                 http://mmtechslv.github.io
+baseurl:             ''
+paginate:            5
 
+# Plugins, Tags, Categories and Analytics  
+plugins:          [jekyll-paginate]
+
+# About/contact
 author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
-
-paginate:         5
-
-# Custom vars
-version:          2.1.0
-
-github:
-  repo:           https://github.com/poole/hyde
+  name:              Farid MUSA
+  url:               https://mmtechslv.github.io
+  email:             mmtechslv@gmail.com
