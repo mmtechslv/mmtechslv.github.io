@@ -3,15 +3,17 @@
 permalink:           /:categories/:year/:month/:day/:title/
 
 # Setup
-title:               Farid's Personal Blog
-tagline:             Farid MUSA BLOG
-description:         Some Amazing Description
+title:               Farid MUSA
+tagline:             Personal WebPage
+description:         Coder with an extreme passion for bioinformatics and health informatics.
 url:                 http://mmtechslv.github.io
 baseurl:             ''
 paginate:            5
 
 # Plugins, Tags, Categories and Analytics  
-plugins:          [jekyll-paginate]
+plugins:          
+    - jekyll-paginate
+    - jekyll-avatar
 
 # About/contact
 author:

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: About Me
-order: 1
+title: Tutorials
+order: 2
 ---
 
 <p class="message">
