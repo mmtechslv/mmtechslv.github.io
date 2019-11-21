@@ -17,22 +17,28 @@ For more details about my background please view my <strong> <a type="applicatio
 <div class="social-links-grid">
 <div class="social-links-grid-item">
 <ul>
-<li><img src="{{ site.url }}/public/assets/social/linkedin.svg" /></li>
+<li><img src="/public/assets/social/linkedin.svg" /></li>
 <li><a href="https://www.linkedin.com/in/faridmusa" target="_blank">LinkedIn</a></li>
 </ul>
 <ul>
-<li><img src="{{ site.url }}/public/assets/social/github.svg" /></li>
+<li><img src="/public/assets/social/github.svg" /></li>
 <li><a href="https://www.github.com/mmtechslv" target="_blank">GitHub</a></li>
 </ul>
 </div>
 <div class="social-links-grid-item">
 <ul>
-<li><img src="{{ site.url }}/public/assets/social/slideshare.svg" /></li>
+<li><img src="/public/assets/social/slideshare.svg" /></li>
 <li><a href="https://www.slideshare.net/faridmusa1" target="_blank">SlideShare</a></li>
 </ul>
 <ul>
-<li><img src="{{ site.url }}/public/assets/social/stackoverflow.svg" /></li>
+<li><img src="/public/assets/social/stackoverflow.svg" /></li>
 <li><a href="https://stackoverflow.com/users/2083652/mmtechslv" target="_blank">Stack Overflow</a> <em>(new)</em></li>
+</ul>
+</div>
+<div class="social-links-grid-item">
+<ul>
+<li><img src="/public/assets/social/zotero.svg" /></li>
+<li><a href="https://www.zotero.org/mmtechslv" target="_blank">Zotero</a></li>
 </ul>
 </div>
 </div>

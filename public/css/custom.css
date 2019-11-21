@@ -1,7 +1,7 @@
 .social-links-grid {
     font-weight:bold;
     display: grid;
-    grid-template-columns: auto auto
+    grid-template-columns: auto auto auto
 }
 .social-links-grid-item {
   font-size: 1.2em;
