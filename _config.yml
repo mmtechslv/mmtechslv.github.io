@@ -10,7 +10,7 @@ title:               Farid MUSA
 tagline:             Personal WebPage
 description:         Coder with passion for bioinformatics and health informatics.
 url:                 http://mmtechslv.github.io
-baseurl:             '/'
+baseurl:             ''
 paginate:            5
 
 # Plugins, Tags, Categories and Analytics  
@@ -18,6 +18,7 @@ plugins:
     - jekyll-paginate
     - jekyll-avatar
     - jekyll-gist
+    - github-pages
 
 # About/contact
 author:

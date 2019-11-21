@@ -32,8 +32,8 @@
  */
 
 @font-face {
-	font-family: "simplifica";
-	src: url("../fonts/simplifica/typeface.ttf");
+	font-family: "Simplifica";
+	src: url("/public/fonts/simplifica/typeface.ttf");
 }
 
 html {
@@ -63,7 +63,7 @@ html {
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
-  font-family: "simplifica", serif;
+  font-family: "Simplifica", serif;
   font-weight: bold;
   letter-spacing: 1pt;
 }
