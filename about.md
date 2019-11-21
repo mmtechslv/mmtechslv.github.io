@@ -1,31 +1,41 @@
 ---
 layout: page
-title: About Me
+title: About
 order: 1
 ---
 
-<p class="message">
-  Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
-</p>
+<h2> Me Shortly </h2>
 
-In the novel, *The Strange Case of Dr. Jeykll and Mr. Hyde*, Mr. Poole is Dr. Jekyll's virtuous and loyal butler. Similarly, Poole is an upstanding and effective butler that helps you build Jekyll themes. It's made by [@mdo](https://twitter.com/mdo).
+I am Farid, I was born in Ganja(Azerbaijan), I studied in Izmir(Turkey) and now I live in Bursa(Turkey). Shortly after the day I saw a computer for the first time, I realized that I am going to die with this thing. As a fellow millennial, who was born in Azerbaijan and raised bilingual, I was verly lucky to be able to use the power of Russian language in 2000s. Thanks to countless sharing people in online chats, forums and blogs, I was able to learn many things about information technology. I enjoyed gradualy learning how computer networks work, how an operating systems was designed, beauty of computer hardware, elegance of hacking, thrill of reverse engineering and amazing power, and fun of programming languages such as C++, VB.NET, PHP, Assembler, etc. Fast forward few years, I earned Bachelor of Engineering degree in Process Engineering from Izmir Institute of Technology and bitterly realized that not every field integrates computer science with the same rate. Currently, I am about to complete my Master's Degree in Biotechnology and Bionegineering program with thesis focus on microbiome research.
 
-There are currently two themes built on Poole:
+I believe that the Era of Big data will change our civilization in many ways, and without a doubt biological data will help scholars to reveal some of the most amazing and unknown things about this world.
 
-* [Hyde](http://hyde.getpoole.com)
-* [Lanyon](http://lanyon.getpoole.com)
+For more details about my background please view my <strong> <a type="application/pdf" href="{{ site.url }}/public/cv/FaridMUSA_CV.pdf"> Curriculum Vitae. </a> </strong>
 
-Learn more and contribute on [GitHub](https://github.com/poole).
-
-## Setup
-
-Some fun facts about the setup of this project include:
-
-* Built for [Jekyll](http://jekyllrb.com)
-* Developed on GitHub and hosted for free on [GitHub Pages](https://pages.github.com)
-* Coded with [Sublime Text 2](http://sublimetext.com), an amazing code editor
-* Designed and developed while listening to music like [Blood Bros Trilogy](https://soundcloud.com/maddecent/sets/blood-bros-series)
-
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/poole/issues/new) or [ask me on Twitter](https://twitter.com/mdo).
-
-Thanks for reading!
+<h2> Social Links </h2>
+<hr>
+<div class="social-links-grid">
+<div class="social-links-grid-item">
+<ul>
+<li><img src="{{ site.url }}/public/assets/social/linkedin.svg" /></li>
+<li><a href="https://www.linkedin.com/in/faridmusa" target="_blank">LinkedIn</a></li>
+</ul>
+<ul>
+<li><img src="{{ site.url }}/public/assets/social/github.svg" /></li>
+<li><a href="https://www.github.com/mmtechslv" target="_blank">GitHub</a></li>
+</ul>
+</div>
+<div class="social-links-grid-item">
+<ul>
+<li><img src="{{ site.url }}/public/assets/social/slideshare.svg" /></li>
+<li><a href="https://www.slideshare.net/faridmusa1" target="_blank">SlideShare</a></li>
+</ul>
+<ul>
+<li><img src="{{ site.url }}/public/assets/social/stackoverflow.svg" /></li>
+<li><a href="https://stackoverflow.com/users/2083652/mmtechslv" target="_blank">Stack Overflow</a> <em>(new)</em></li>
+</ul>
+</div>
+</div>
+<hr>
+<h3> Acknowledgement </h3>
+Special thanks to <a href="https://twitter.com/mdo"> Mark Otto @mdo</a> for this amazing Jekyll theme. Using Jekyll and <a href="http://hyde.getpoole.com">Hyde theme</a>, I was able to build this site in just two days.

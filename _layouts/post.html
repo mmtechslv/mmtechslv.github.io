@@ -4,10 +4,15 @@ layout: default
 
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
+  <span class="post-date">Posted on: {{ page.date | date_to_string }}</span>
+  <hr>
   {{ content }}
 </div>
-
+{% if page.tags != null %}
+<hr>
+<span>[{% for tag in page.tags %}<a href="/tag/{{ tag }}"><code class="highligher-rouge"><nobr>{{ tag }}</nobr></code></a>&nbsp;{% endfor %}]</span>
+<hr>
+{% endif %}
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">

@@ -130,7 +130,7 @@ dd {
 /* Misc */
 hr {
   position: relative;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   border: 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #fff;
@@ -330,7 +330,7 @@ tbody tr:nth-child(odd) th {
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 /* Blog post or page title */
@@ -354,9 +354,8 @@ tbody tr:nth-child(odd) th {
 
 /* Related posts */
 .related {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .related-posts {
   padding-left: 0;

@@ -64,9 +64,8 @@ html {
   color: rgba(255,255,255,.5);
   background-color: #202020;
   font-family: "simplifica", serif;
-  font-size: 20pt;
   font-weight: bold;
-  letter-spacing: 2pt;
+  letter-spacing: 1pt;
 }
 @media (min-width: 48em) {
   .sidebar {
@@ -75,7 +74,7 @@ html {
     left: 0;
     bottom: 0;
     width: 18rem;
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -94,6 +93,7 @@ html {
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
+  font-size:1.2em
 }
 .sidebar-nav-item {
   display: block;
@@ -136,7 +136,7 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 48em) {
   .content {
-    max-width: 38rem;
+    max-width: 70rem;
     margin-left: 20rem;
     margin-right: 2rem;
   }
