@@ -19,6 +19,7 @@ plugins:
     - jekyll-avatar
     - jekyll-gist
     - github-pages
+    - jekyll-analytics
 
 # About/contact
 author:
@@ -30,3 +31,8 @@ collections:
     publications:
         sort_by: title
         output: true
+        
+jekyll_analytics:
+  GoogleAnalytics:          # Add, if you want to track with Google Analytics
+    id: UA-36734723-4       # Required - replace with your tracking id
+    anonymizeIp: false      # Optional - Default: false - set to true for anonymized tracking
