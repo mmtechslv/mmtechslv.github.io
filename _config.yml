@@ -19,6 +19,8 @@ plugins:
     - jekyll-avatar
     - jekyll-gist
     - github-pages
+    - jekyll-seo-tag
+    - jekyll-sitemap
 
 # About/contact
 author:
