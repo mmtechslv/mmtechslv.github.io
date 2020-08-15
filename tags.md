@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tags
-order: 4
+order: 5
 ---
 
 {% for document in site.documents %}

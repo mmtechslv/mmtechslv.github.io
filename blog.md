@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Blog
-order: 3
+order: 4
 ---
 
 {% for post in site.posts %}

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Publications
+title: Writings
 order: 2
 ---
 
