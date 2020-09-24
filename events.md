@@ -6,6 +6,7 @@ order: 3
 
 ## Conferences
 
+- DjangoCon - DjangoCon Europe - 2020
 - ECCB - European Conference on Computational Biology - 2020
 - MEEV - Virtual Meeting on Microbial Ecology and Evolution - 2020
 - HIBIT - International Symposium on Health Informatics and Bioinformatics - 2019
