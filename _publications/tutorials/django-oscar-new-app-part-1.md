@@ -5,7 +5,7 @@ tags: django oscar app dashboard
 category: Creating an Oscar App with Dashboard
 date: 2021-03-16
 output: true
-description: Learning Django-Oscar can be cumbersome. In this tutorial, you will learn how to create a brand new Oscar app with dashboard.
+description: Learning Django-Oscar can be cumbersome. In this tutorial, you will learn how to create a brand new Oscar app with a dashboard.
 ---
 
 
@@ -294,4 +294,6 @@ Result should look like this:
   <img width="528" height="243" src="/public/tutorials/django-oscar-new-app/OscarBoutiquesDetails.png">
 </p>
 
-At this point the app's model, configs and its front-end templates are ready.  In the next tutorial we will develop Oscar dashboard for the `boutique` app.
+At this point the app's model, configs and its front-end templates are ready.  In the [**next**](/publications/tutorials/django-oscar-new-app-part-2/) tutorial we will develop Oscar dashboard for the `boutique` app.
+
+> Source code of this tutorial can be found in my Git repository **[here](https://github.com/mmtechslv/tutorial-django-oscar-newapp)**

@@ -8,7 +8,8 @@ title: Home
 {% for group in groups %}
 <h2> {{ group.name }} </h2>
 <ul>
-{% for item in group.items %}
+{% assign items = group.items | sort: "date" | reverse %}
+{% for item in items %}
 <li><a href="{{ item.url }}">{{ item.title }}</a> - <em>{{ item.date | date_to_string }}</em></li>
 {%endfor%}
 </ul>
