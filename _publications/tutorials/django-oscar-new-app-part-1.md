@@ -1,15 +1,18 @@
 ---
-layout: post
-title: Creating a new Django Oscar app with dashboard (Part 1)
+layout: publication
+title: Creating an Oscar App with Dashboard (Part 1)
 tags: django oscar app dashboard
+category: Creating an Oscar App with Dashboard
+date: 2021-03-16
 output: true
-description: Tutorial on how to create a new Django Oscar app with dashboard.
+description: Learning Django-Oscar can be cumbersome. In this tutorial, you will learn how to create a brand new Oscar app with dashboard.
 ---
+
 
 # Introduction
 In this tutorial you are going to learn how to create a new Django app and integrate it into *Oscar* e-commerce framework. Particularly, we will create a new sample Django app called `boutique` and integrate it to the Oscar's default front and dashboard.  
 ## Getting ready (django-oscar)
-First it is necessary to create a virtual environment to work in. I use *pipenv* as virtual environment for its simplicity and ease of use. Create a directory called `/myoscarapp` and move inside and run following command:
+First it is necessary to create a virtual environment to work in. I use *pipenv* as virtual environment for its simplicity and ease of use. Create a directory called `/myoscarapp`, move inside and run following command:
 
 {% highlight bash %}
 
@@ -23,7 +26,7 @@ Then install the *django-oscar* using pip:
     $ pip install django-oscar[sorl-thumbnail]
 {% endhighlight %}
 
-Now create a brand new django project using following command and rename the create directory to `src` for convenience:
+Now create a brand new Dango project using following command and rename the created directory to `src` for convenience:
 
 {% highlight bash %}
 
@@ -31,7 +34,7 @@ Now create a brand new django project using following command and rename the cre
     $ mv myoscarproject src
 {% endhighlight %}
 
-Next configure django `settings.py` and `urls.py` as described in Oscar's [corresponding documentation](https://django-oscar.readthedocs.io/en/stable/internals/getting_started.html#django-settings). 
+Next configure Django `settings.py` and `urls.py` as described in Oscar's [corresponding documentation](https://django-oscar.readthedocs.io/en/stable/internals/getting_started.html#django-settings). 
 Run `makemigrations` and `migrate`:
 
 {% highlight bash %}
@@ -54,10 +57,11 @@ Following screen should be now available:
  
 
 ## Creating "boutique" app for Django-Oscar 
-New app is created as usuall using following command:
+New app is created as usual using following command:
 
     python manage.py startapp boutique
-Once again as usuall after the app is created it is necessary to register the app in `INSTALLED_APPS` in `settings.py` as shown bellow:
+
+Once again as usual after the app is created, it is necessary to register the app in `INSTALLED_APPS` in `settings.py` as shown bellow:
 
 {% highlight python %}
 
@@ -86,7 +90,7 @@ Similarly, your `urls.py` should look like this:
 
 In the code above, line with `boutique_dashboard` URL configuration is temporarily commented out and will be turned on when Oscar's dashboard app is  forked.  
 ### Models for "boutique" app
-Create following model that will represent single **boutique** with three fields. 
+Create following model that will represent a single **boutique** with three fields. 
 
 {% highlight python %}
 
@@ -102,7 +106,7 @@ Create following model that will represent single **boutique** with three fields
 {% endhighlight %}
 
 ### App configs for "boutique" app
-While usuall Django app's config class in `apps.py` inherits Django's default `django.apps.AppConfig`class, Oscar app's must inherit `oscar.core.application.OscarConfig` instead. Your `apps.py` should look like this:
+While usual Django app's config class in `apps.py` inherits Django's default `django.apps.AppConfig`class, Oscar app's must inherit `oscar.core.application.OscarConfig` instead. Your `apps.py` should look like this:
 
 {% highlight python %}
 
@@ -110,11 +114,10 @@ While usuall Django app's config class in `apps.py` inherits Django's default `d
     from django.urls import path, re_path
     from oscar.core.loading import get_class
     
-    
     class BoutiqueConfig(OscarConfig):
         name = 'boutique'
         namespace = 'boutique'
-    
+        
         def ready(self):
             super().ready()
             self.boutique_list_view = get_class(
@@ -132,10 +135,10 @@ While usuall Django app's config class in `apps.py` inherits Django's default `d
             return self.post_process_urls(urls)
 {% endhighlight %}
 
-It is optional to use `get_class` and `get_model` when developing your own app but required when overriding Oscar apps. However, I prefer using Oscar's approach as I encountered errors when importing modules using `import` statement. 
+It is optional to use `get_class` and `get_model` when developing your own app but required when overriding Oscar apps. However, I prefer using Oscar's approach in all cases as I previously encountered various errors when importing modules using `import` statement. 
 
 ### Admin for "boutique" app
-Although this step is optional and Oscar's dashboard is sufficient to add, modify and remove `Boutique` elements to the database. However, for early testing let's register our model in Django's admin. Add following code to `admin.py` in the app's directory.
+This step is optional and Oscar's dashboard is sufficient to add, modify and remove `Boutique` elements to the database. However, for early testing let's register our model in Django's admin. Add following code to the `admin.py` in the app's directory.
 
 {% highlight python %}
 
@@ -150,7 +153,9 @@ Although this step is optional and Oscar's dashboard is sufficient to add, modif
     admin.site.register(Boutique, BoutiqueAdmin)
 {% endhighlight %}
 
-Now that model is registered in Django admin, go on and create a super user using command `python manage.py createsuperuser`. Then, if you wish, add few items for testing.
+Now that the model is registered in Django's admin, go on and add few items for testing.
+
+> To access Django's admin you will need to create a super user using command `python manage.py createsuperuser`
 
 ### Views for "boutique" app
 There is nothing special in implementation of views that will deliver context to the front pages. Following is a working `views.py` based on Django's generic class-based views.
@@ -174,7 +179,7 @@ There is nothing special in implementation of views that will deliver context to
 {% endhighlight %}
 
 ### Front-end templates for "boutique" views
-First and foremost, let's override Oscar's navigation template by adding url to our `BoutiqueListView`. First create a directory called `oscar` in in `/src/templates` directory. Any template file with same relative path Oscar's templates from source code will be overriden by Oscar and become a higher priority template. Because Oscar is developed in a very smart and customizable way, it is very easy to add an element to original Oscar template navigation. The original template HTML file from Oscar's source code can be found in `/templates/oscar/partials/nav_primary.html`. Accordingly, we need to create file `oscar/partials/nav_primary.html` that will contain following code:
+First and foremost, let's override Oscar's navigation template by adding URL to our `BoutiqueListView`. First create a directory called `oscar` in in `/src/templates` directory. Any template file with same relative path Oscar's templates from source code will be overridden by Oscar and become a higher priority template. Because Oscar is developed in a very smart and customizable way, it is very easy to add an element to original Oscar template navigation. The original template HTML file from Oscar's source code can be found in `/templates/oscar/partials/nav_primary.html`. Accordingly, we need to create file `oscar/partials/nav_primary.html` that will contain following code:
 
 {% highlight html+django %}{% raw %}
 
@@ -191,13 +196,13 @@ First and foremost, let's override Oscar's navigation template by adding url to 
     {% endblock %}
 {% endraw %}{% endhighlight %}
 
-In the code above, code we first extend the original Oscar's template. Then we only override block `nav_items`  by adding new element to the Oscar's default front-end navigation. After restarting the server following front should show up:
+In the code above, we first extend the original Oscar's template. Then we override the block `nav_items`  by adding new element to the Oscar's default front-end navigation. After restarting the server, following front should show up:
 <p align="center">
   <img width="416" height="195" src="/public/tutorials/django-oscar-new-app/OscarBoutiquesNavBar.png">
 </p>
- 
+
 ### Template for list of boutiques
-Previously we created a view `BoutiqueListView`, which is responsible to deliver the context with a list of `Boutique` instances to the template `boutique/boutique_list.html`. Therefore, we first create an HTML file `/src/templates/boutique/boutique_list.html`. Notice that this template file is not placed under `/src/templates/oscar` directory. This is because this template is a new template and does not override anything. However, in our case, it does extend the default Oscar layout template as shown:
+Previously we created a view `BoutiqueListView`, which is responsible for delivering the context with a list of `Boutique` instances to the template `boutique/boutique_list.html`. Therefore, we first create an HTML file `/src/templates/boutique/boutique_list.html`. Notice that this template file is not placed under `/src/templates/oscar` directory. This is because we do not override Oscar's template and merely creating a new custom template. However, in our case, it does extend the default Oscar layout template as shown:
 
 {% highlight html+django %}{% raw %}
 
@@ -244,7 +249,7 @@ The result should look like this:
   <img width="480" height="252" src="/public/tutorials/django-oscar-new-app/OscarBoutiquesList.png">
 </p>
 ### Template for boutique details
-Now that we can list our boutique elements lets add page where user can view details of any given boutique. Similar to previous template create a new HTML file `/src/templates/boutique/boutique_details.html` with following code:
+Now that we have a page with a list our boutique elements let's add page where user can view details of any given boutique. Similarly to the listing template, let's create a new HTML file `/src/templates/boutique/boutique_details.html` with following code:
 
 {% highlight html+django %}{% raw %}
 
