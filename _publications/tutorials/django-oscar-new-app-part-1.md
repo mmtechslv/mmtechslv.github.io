@@ -61,7 +61,7 @@ New app is created as usual using following command:
 
     python manage.py startapp boutique
 
-Once again as usual after the app is created, it is necessary to register the app in `INSTALLED_APPS` in `settings.py` as shown bellow:
+Once again as usual after the app is created, it is necessary to register the app in `INSTALLED_APPS` in `settings.py` as shown below:
 
 {% highlight python %}
 

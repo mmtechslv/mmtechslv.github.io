@@ -3,7 +3,7 @@ layout: publication
 title: Introduction to Next Generation Sequencing
 tags: NGS sequencing presentation
 category: Presentations
-date: 2019-09-03
+date: 2018-12-21
 output: true
 description: Introduction to Next Generation Sequencing
 ---

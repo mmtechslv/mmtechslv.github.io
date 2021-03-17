@@ -3,7 +3,7 @@ layout: publication
 title: Workspace Setup(ongoing)
 tags: tutorial microbiome amplicon-metagenomics data-analysis workspace
 category: Guide for Microbiome Data Analysis
-date: 2019-09-03
+date: 2019-09-05
 output: true
 description: Learn basic concepts and HOWTOs, which are required to manually setup your own workspace for processing & analysis of amplicon metagenomics data.
 ---
