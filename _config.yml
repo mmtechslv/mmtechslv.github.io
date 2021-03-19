@@ -6,15 +6,15 @@ markdown:         kramdown
 highlighter:      rouge
 
 # Setup
-title:               Farid MUSA
+title:               Farid Musa
 tagline:             Personal WebPage
 description:         Coder with passion for bioinformatics and health informatics.
-url:                 https://mmtechslv.github.io
+url:                 https://mmtechslv.com
 baseurl:             ''
 paginate:            5
 
-# Plugins, Tags, Categories and Analytics  
-plugins:          
+# Plugins, Tags, Categories and Analytics
+plugins:
     - jekyll-paginate
     - jekyll-avatar
     - jekyll-gist
@@ -25,13 +25,13 @@ plugins:
 # About/contact
 author:
   name:              Farid MUSA
-  url:               https://mmtechslv.github.io
+  url:               https://mmtechslv.com
   email:             mmtechslv@gmail.com
 
 collections:
     publications:
         sort_by: title
         output: true
-        
+
 google_analytics:
     tracking_id:    UA-36734723-4
