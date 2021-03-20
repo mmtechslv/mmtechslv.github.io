@@ -83,7 +83,7 @@ comments:
 
 author:
   name:              "Farid Musa"
-  avatar:            "https://www.gravatar.com/avatar/afc80457c91b0780784532ac2b3b7b9b"
+  avatar:            "/public/assets/images/profile_pic.jpg" #"https://www.gravatar.com/avatar/afc80457c91b0780784532ac2b3b7b9b"
   bio      :                "Coder with passion for bioinformatics and health informatics."
   url:               "https://mmtechslv.com"
   email:             "mmtechslv@gmail.com"
