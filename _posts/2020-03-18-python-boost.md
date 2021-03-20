@@ -1,9 +1,12 @@
 ---
-layout: post
+layout: posts
 title: Guide to improve Python performance.
-tags: programming python concurrency parallelism
-output: true
-description: The primary objective of this guide is to summarize all of the popular approaches for boosting the execution speed of your Python code.
+excerpt: The primary objective of this guide is to summarize all of the popular approaches for boosting the execution speed of your Python code.
+tags:
+    - programming
+    - python
+    - concurrency
+    - parallelism
 ---
 
 Python is an amazing programming language, but it has two huge handicaps compared to compiled languages.

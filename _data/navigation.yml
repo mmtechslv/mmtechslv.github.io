@@ -1,0 +1,13 @@
+main:
+  - title: "Home"
+    url: /
+  - title: "Events"
+    url: /events/
+  - title: "Posts"
+    url: /year-archive/
+  - title: "Tutorials"
+    url: /tutorials/
+  - title: "Tags"
+    url: /tags/
+  - title: "About"
+    url: /about
