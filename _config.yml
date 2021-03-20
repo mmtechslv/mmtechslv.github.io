@@ -24,15 +24,9 @@ permalink:           /:categories/:year/:month/:title/
 markdown:         kramdown
 highlighter:      rouge
 
-<<<<<<< HEAD
-# Setup
-title:               Farid Musa
-tagline:             Personal WebPage
-=======
 title:               Farid MUSA
 email:                 mmtechslv@gmail.com
 tagline:             Personal Page
->>>>>>> develop
 description:         Coder with passion for bioinformatics and health informatics.
 url:                 https://mmtechslv.com
 baseurl:             ''
@@ -46,18 +40,7 @@ search_provider: algolia
 paginate:            5
 paginate_path: /page:num/
 
-<<<<<<< HEAD
-# Plugins, Tags, Categories and Analytics
-plugins:
-    - jekyll-paginate
-    - jekyll-avatar
-    - jekyll-gist
-    - github-pages
-    - jekyll-seo-tag
-    - jekyll-sitemap
-=======
 include: ["_pages"]
->>>>>>> develop
 
 # Build settings
 theme: minimal-mistakes-jekyll
@@ -97,11 +80,6 @@ comments:
     shortname: "mmtechslv-com"
     
 author:
-<<<<<<< HEAD
-  name:              Farid MUSA
-  url:               https://mmtechslv.com
-  email:             mmtechslv@gmail.com
-=======
   name:              "Farid Musa"
   avatar:            "https://www.gravatar.com/avatar/afc80457c91b0780784532ac2b3b7b9b"
   bio      :                "Coder with passion for bioinformatics and health informatics."
@@ -132,18 +110,13 @@ author:
     - label: "MmTechSlV"
       icon: "fas fa-fw fa-link"
       url: "https://mmtechslv.com"
->>>>>>> develop
 
 collections:
     tutorials:
         sort_by: title
         output: true
-<<<<<<< HEAD
-
-=======
         permalink: /:collection/:path/
         
->>>>>>> develop
 google_analytics:
     tracking_id:    UA-36734723-4
     
