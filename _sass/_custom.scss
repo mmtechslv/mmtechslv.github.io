@@ -1,0 +1,26 @@
+.social-links-grid {
+    font-weight:bold;
+    display: grid;
+    grid-template-columns: auto auto auto
+}
+.social-links-grid-item {
+  font-size: 1.2em;
+  text-align: left;
+  
+}
+.social-links-grid ul {
+    list-style: none;
+    padding-left: 0;
+}
+.social-links-grid li{
+    display: inline-block;
+    list-style-type: none;
+    padding-right: 20px;
+    vertical-align: middle;
+}
+.social-links-grid li img {
+    width: 2em;
+    height:2em;
+    float: left;
+    margin-bottom:0
+}

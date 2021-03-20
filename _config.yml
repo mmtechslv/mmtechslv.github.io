@@ -1,3 +1,22 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
 # Permalinks
 #
 permalink:           /:categories/:year/:month/:title/
@@ -5,33 +24,104 @@ permalink:           /:categories/:year/:month/:title/
 markdown:         kramdown
 highlighter:      rouge
 
-# Setup
-title:               Farid Musa
-tagline:             Personal WebPage
+title:               Farid MUSA
+email:                 mmtechslv@gmail.com
+tagline:             Personal Page
 description:         Coder with passion for bioinformatics and health informatics.
-url:                 https://mmtechslv.github.io
+url:                 https://mmtechslv.com
 baseurl:             ''
+twitter_username: mmtechslv
+github_username:  mmtechslv
+repository: "mmtechslv/mmtechslv.github.io"
+logo: #
+masthead_title : "MmTechSlV"
+teaser : "/assets/images/teaser.jpg"
+search_provider: algolia
 paginate:            5
+paginate_path: /page:num/
 
-# Plugins, Tags, Categories and Analytics  
-plugins:          
-    - jekyll-paginate
-    - jekyll-avatar
-    - jekyll-gist
-    - github-pages
-    - jekyll-seo-tag
-    - jekyll-sitemap
+include: ["_pages"]
 
-# About/contact
+# Build settings
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "contrast" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
+plugins:
+  - jekyll-feed
+  
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      show_date: true
+      read_time: true
+      comments: true
+      author_profile: true
+      share: true
+      related: true
+  # _tutorials
+  - scope:
+      path: ""
+      type: tutorials
+    values:
+      layout: single
+      classes: wide
+      show_date: true
+      read_time: true
+      share: true
+      author_profile: true
+      comments: true
+      
+comments:
+  provider: "disqus"
+  disqus:
+    shortname: "mmtechslv-com"
+    
 author:
-  name:              Farid MUSA
-  url:               https://mmtechslv.github.io
-  email:             mmtechslv@gmail.com
+  name:              "Farid Musa"
+  avatar:            "https://www.gravatar.com/avatar/afc80457c91b0780784532ac2b3b7b9b"
+  bio      :                "Coder with passion for bioinformatics and health informatics."
+  url:               "https://mmtechslv.com"
+  email:             "mmtechslv@gmail.com"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/faridmusa/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/mmtechslv"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/mmtechslv"
+    - label: "Medium"
+      icon: "fab fa-medium"
+      url: "https://mmtechslv.medium.com"
+    - label: "StackOverflow"
+      icon: "fab fa-stack-overflow"
+      url: "https://stackoverflow.com/users/2083652/mmtechslv"
+    - label: "SlideShare"
+      icon: "fab fa-slideshare"
+      url: "https://www.slideshare.net/faridmusa1"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/mmtechslv"
+    - label: "MmTechSlV"
+      icon: "fas fa-fw fa-link"
+      url: "https://mmtechslv.com"
 
 collections:
-    publications:
+    tutorials:
         sort_by: title
         output: true
+        permalink: /:collection/:path/
         
 google_analytics:
     tracking_id:    UA-36734723-4
+    
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "UA-36734723-4"
+    anonymize_ip: false # default

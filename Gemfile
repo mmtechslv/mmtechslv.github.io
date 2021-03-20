@@ -1,8 +1,36 @@
 source "https://rubygems.org"
 
-gem "github-pages", group: :jekyll_plugins
-gem "jekyll-avatar", group: :jekyll_plugins
-gem "jekyll-gist", group: :jekyll_plugins
-gem 'jekyll-sitemap', group: :jekyll_plugins
-gem 'jekyll-seo-tag', group: :jekyll_plugins
-gem "nokogiri", ">= 1.10.8"
+# Hello! This is where you manage which Jekyll version is used to run.
+# When you want to use a different version, change it below, save the
+# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+#
+#     bundle exec jekyll serve
+#
+# This will help ensure the proper Jekyll version is running.
+# Happy Jekylling!
+
+# gem "github-pages", group: :jekyll_plugins
+
+# To upgrade, run `bundle update`.
+
+gem "github-pages", group: :jekyll_plugins # gem "jekyll"
+gem "minimal-mistakes-jekyll"
+group :jekyll_plugins do
+  gem "jekyll-feed"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jekyll-paginate"
+  gem "jekyll-include-cache"
+  gem "jekyll-algolia"
+end
+
+# The following plugins are automatically loaded by the theme-gem:
+#   gem "jekyll-paginate"
+#   gem "jekyll-sitemap"
+#   gem "jekyll-gist"
+#   gem "jekyll-feed"
+#   gem "jekyll-include-cache"
+#
+# If you have any other plugins, put them here!
+group :jekyll_plugins do
+end
