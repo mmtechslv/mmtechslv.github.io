@@ -4,6 +4,7 @@ title: Events
 permalink: /events/
 header:
     overlay_image: /public/assets/images/teaser.jpg
+    caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 ---
 
 ## Conferences
