@@ -12,6 +12,8 @@ tags:
     - dashboard
 header:
     teaser: /public/assets/tutorials/oscar-dashboard-new-app.jpg
+redirect_from:
+  - /publications/tutorials/django-oscar-new-app-part-2
 ---
 
 
@@ -27,9 +29,9 @@ mkdir boutique/dashboard
 Then initialize a new Django app using the following command:  
 
     python manage.py startapp dashboard boutique/dashboard
-   
+
 > You can delete `admin.py`, `models.py` and `tests.py`, because these are not required for the Oscar's dashboard app.
-    
+
 Once again after the dashboard app is created, it is necessary to register the app in `INSTALLED_APPS` in `settings.py` as shown below:
 
 {% highlight python %}
@@ -57,7 +59,7 @@ urlpatterns = [
 ]
 {% endhighlight %}
 
-However, at this point label, `boutique_dashboard` is not associated with any configuration. Therefore, let's move on and create the Boutique Dashboard Oscar app config. 
+However, at this point label, `boutique_dashboard` is not associated with any configuration. Therefore, let's move on and create the Boutique Dashboard Oscar app config.
 
 ## App configs for the Boutique's dashboard
 
@@ -98,13 +100,13 @@ class DashboardConfig(OscarDashboardConfig):
         return self.post_process_urls(urls)
 {% endhighlight %}
 
-One important point in this configuration is to change the `label` parameter. The Django Oscar's default dashboard app conflicts with `DashboardConfig` of the Boutique dashboard app. Django's documentation state that: 
+One important point in this configuration is to change the `label` parameter. The Django Oscar's default dashboard app conflicts with `DashboardConfig` of the Boutique dashboard app. Django's documentation state that:
 
 > "AppConfig.label defaults to the last component of `name`."
 
-Therefore, it is necessary choose a different label like `boutique_dashboard` in order to "tell" Django that this dashboard app is different from Oscar's built-in dashboard app. 
+Therefore, it is necessary choose a different label like `boutique_dashboard` in order to "tell" Django that this dashboard app is different from Oscar's built-in dashboard app.
 
-Another difference between dashboard app config from primary boutique app config is the `default_permissions` parameter. This parameter sets the Oscar's dashboard permissions for this dashboard app. Since the Oscar has multiple user permission levels like one that has *Fulfilment Parters*, setting this parameter to `is_staff` disables access to this dashboard for any user except c users like super-users. 
+Another difference between dashboard app config from primary boutique app config is the `default_permissions` parameter. This parameter sets the Oscar's dashboard permissions for this dashboard app. Since the Oscar has multiple user permission levels like one that has *Fulfilment Parters*, setting this parameter to `is_staff` disables access to this dashboard for any user except c users like super-users.
 
 ## Forms for the Boutique's dashboard app
 
@@ -219,9 +221,9 @@ class DashboardBoutiqueListView(generic.ListView):
         return qs
 {% endhighlight %}
 
-The only non-trivial part of the code above is the additional parameter `filterform_class`, which is essentially a parameter that is recognized and processed by Oscar's templates. 
+The only non-trivial part of the code above is the additional parameter `filterform_class`, which is essentially a parameter that is recognized and processed by Oscar's templates.
 
-### **Creating Boutique instances in the dashboard** 
+### **Creating Boutique instances in the dashboard**
 
 Similarly, the view responsible for creating the boutique instances inherits `generic.CreateView` and is shown in the following code:
 
@@ -252,9 +254,9 @@ class DashboardBoutiqueCreateView(generic.CreateView):
         return response
 {% endhighlight %}
 
-In the code above, the parameter `success_url` is assigned to `reverse_lazy` and not `reverse` because the URL will be evaluated lazily(or when required). Moreover, Oscar uses Django's built-in messages framework to pass success and fail messages to the templates. The messages are handled in corresponding methods `forms_invalid` and `forms_valid`. 
+In the code above, the parameter `success_url` is assigned to `reverse_lazy` and not `reverse` because the URL will be evaluated lazily(or when required). Moreover, Oscar uses Django's built-in messages framework to pass success and fail messages to the templates. The messages are handled in corresponding methods `forms_invalid` and `forms_valid`.
 
-### **Updating Boutique instances in the dashboard** 
+### **Updating Boutique instances in the dashboard**
 
 View for updating Boutique instance is very similar to create a view and uses the same template but inherits `generic.UpdateView` instead.
 
@@ -337,13 +339,6 @@ Once the navigation item is added you will get the following screen when enterin
 
 # Conclusion
 
-At the end of this tutorial, you should be able to create a brand new Django Oscar app with a working dashboard and everything. I hope this tutorial was helpful for the reader and made one's life easier while learning such an amazing e-commence framework like Django-Oscar. 
+At the end of this tutorial, you should be able to create a brand new Django Oscar app with a working dashboard and everything. I hope this tutorial was helpful for the reader and made one's life easier while learning such an amazing e-commence framework like Django-Oscar.
 
 > Source code of this tutorial can be found in my Git repository **[here](https://github.com/mmtechslv/tutorial-django-oscar-newapp)**
-
-
-
-
-
-
-

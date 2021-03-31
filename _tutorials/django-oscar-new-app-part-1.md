@@ -12,6 +12,8 @@ tags:
     - dashboard
 header:
     teaser: /public/assets/tutorials/oscar-dashboard-new-app.jpg
+redirect_from:
+  - /publications/tutorials/django-oscar-new-app-part-1/
 ---
 
 
@@ -40,12 +42,12 @@ Now create a brand new Dango project using following command and rename the crea
     $ mv myoscarproject src
 {% endhighlight %}
 
-Next configure Django `settings.py` and `urls.py` as described in Oscar's [corresponding documentation](https://django-oscar.readthedocs.io/en/stable/internals/getting_started.html#django-settings). 
+Next configure Django `settings.py` and `urls.py` as described in Oscar's [corresponding documentation](https://django-oscar.readthedocs.io/en/stable/internals/getting_started.html#django-settings).
 Run `makemigrations` and `migrate`:
 
 {% highlight bash %}
 
-    python manage.py makemigrations 
+    python manage.py makemigrations
     python manage.py migrate
 {% endhighlight %}
 
@@ -60,9 +62,9 @@ Following screen should be now available:
 <p align="center">
   <img width="682" height="312" src="/public/tutorials/django-oscar-new-app/OscarInitial.png">
 </p>
- 
 
-## Creating "boutique" app for Django-Oscar 
+
+## Creating "boutique" app for Django-Oscar
 New app is created as usual using following command:
 
     python manage.py startapp boutique
@@ -84,7 +86,7 @@ Similarly, your `urls.py` should look like this:
     from django.apps import apps
     from django.urls import include, path
     from django.contrib import admin
-    
+
     urlpatterns = [
         path('i18n/', include('django.conf.urls.i18n')),
         path('admin/', admin.site.urls),
@@ -96,17 +98,17 @@ Similarly, your `urls.py` should look like this:
 
 In the code above, line with `boutique_dashboard` URL configuration is temporarily commented out and will be turned on when Oscar's dashboard app is  forked.  
 ### Models for "boutique" app
-Create following model that will represent a single **boutique** with three fields. 
+Create following model that will represent a single **boutique** with three fields.
 
 {% highlight python %}
 
     from django.db import models
-    
+
     class Boutique(models.Model):
         name = models.CharField(max_length=255, blank=True, null=True)
         manager = models.CharField(max_length=150, blank=True, null=True)
         city = models.CharField(max_length=150, blank=True, null=True)
-    
+
         class Meta:
             app_label = 'boutique'
 {% endhighlight %}
@@ -119,18 +121,18 @@ While usual Django app's config class in `apps.py` inherits Django's default `dj
     from oscar.core.application import OscarConfig
     from django.urls import path, re_path
     from oscar.core.loading import get_class
-    
+
     class BoutiqueConfig(OscarConfig):
         name = 'boutique'
         namespace = 'boutique'
-        
+
         def ready(self):
             super().ready()
             self.boutique_list_view = get_class(
                 'boutique.views', 'BoutiqueListView')
             self.boutique_detail_view = get_class(
                 'boutique.views', 'BoutiqueDetailView')
-    
+
         def get_urls(self):
             urls = super().get_urls()
             urls += [
@@ -141,7 +143,7 @@ While usual Django app's config class in `apps.py` inherits Django's default `dj
             return self.post_process_urls(urls)
 {% endhighlight %}
 
-It is optional to use `get_class` and `get_model` when developing your own app but required when overriding Oscar apps. However, I prefer using Oscar's approach in all cases as I previously encountered various errors when importing modules using `import` statement. 
+It is optional to use `get_class` and `get_model` when developing your own app but required when overriding Oscar apps. However, I prefer using Oscar's approach in all cases as I previously encountered various errors when importing modules using `import` statement.
 
 ### Admin for "boutique" app
 This step is optional and Oscar's dashboard is sufficient to add, modify and remove `Boutique` elements to the database. However, for early testing let's register our model in Django's admin. Add following code to the `admin.py` in the app's directory.
@@ -150,12 +152,12 @@ This step is optional and Oscar's dashboard is sufficient to add, modify and rem
 
     from django.contrib import admin
     from oscar.core.loading import get_model
-    
+
     Boutique = get_model('boutique', 'Boutique')
-    
+
     class BoutiqueAdmin(admin.ModelAdmin):
         pass
-    
+
     admin.site.register(Boutique, BoutiqueAdmin)
 {% endhighlight %}
 
@@ -170,14 +172,14 @@ There is nothing special in implementation of views that will deliver context to
 
     from django.views import generic
     from oscar.core.loading import get_model
-    
+
     Boutique = get_model('boutique', 'Boutique')
-    
+
     class BoutiqueListView(generic.ListView):
         model = Boutique
         template_name = 'boutique/boutique_list.html'
         context_object_name = 'boutique_list'
-    
+
     class BoutiqueDetailView(generic.DetailView):
         model = Boutique
         template_name = 'boutique/boutique_details.html'
@@ -191,7 +193,7 @@ First and foremost, let's override Oscar's navigation template by adding URL to 
 
     {% extends "oscar/partials/nav_primary.html" %}
     {% load i18n %}
-    
+
     {% block nav_items %}
     {{ block.super }}
     <li class="nav-item dropdown">
@@ -213,14 +215,14 @@ Previously we created a view `BoutiqueListView`, which is responsible for delive
 {% highlight html+django %}{% raw %}
 
     {% extends "oscar/layout.html" %}
-    
+
     {% load i18n %}
     {% load product_tags %}
-    
+
     {% block title %}
     {% trans "Boutiques" %} | {{ block.super }}
     {% endblock %}
-    
+
     {% block breadcrumbs %}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -231,11 +233,11 @@ Previously we created a view `BoutiqueListView`, which is responsible for delive
             </ol>
         </nav>
     {% endblock %}
-    
+
     {% block headertext %}
         {% trans "Boutique" %}
     {% endblock %}
-    
+
     {% block content %}
         {% if not boutique_list %}
             <p>{% trans "There are no boutique at the moment." %}</p>
@@ -260,14 +262,14 @@ Now that we have a page with a list our boutique elements let's add page where u
 {% highlight html+django %}{% raw %}
 
     {% extends "oscar/layout.html" %}
-    
+
     {% load i18n %}
     {% load product_tags %}
-    
+
     {% block title %}
     {% trans "Boutiques" %} | {{ block.super }}
     {% endblock %}
-    
+
     {% block breadcrumbs %}
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -281,11 +283,11 @@ Now that we have a page with a list our boutique elements let's add page where u
             </ol>
         </nav>
     {% endblock %}
-    
+
     {% block headertext %}
         {% trans "Boutique" %}
     {% endblock %}
-    
+
     {% block content %}
         <p>
           <h2>{{ boutique.name }}</h2> <br>
