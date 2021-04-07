@@ -22,7 +22,11 @@
 permalink:           /:categories/:year/:month/:title/
 # Dependencies
 markdown:         kramdown
-highlighter:      rouge
+kramdown:
+    highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true
 
 title:               Farid MUSA
 email:                 mmtechslv@gmail.com
