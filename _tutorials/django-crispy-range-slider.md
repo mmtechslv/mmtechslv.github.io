@@ -1,7 +1,7 @@
 ---
 layout: collection
 collection: tutorials
-title: How to Create a Fancy Range-Slider Filter in Django
+title: How To Create a Fancy Range-Slider Filter In Django
 category: Django Tutorials
 date: 2021-04-07
 output: true
