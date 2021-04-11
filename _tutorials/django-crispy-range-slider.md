@@ -118,7 +118,7 @@ $ python manage.py makemigrations
 $ python manage.py migrate
 ```
 
-Then, register the model in Django admin by adding the following code to file `/src/myapp/admnin.py`:
+Then, register the model in Django admin by adding the following code to file `/src/myapp/admin.py`:
 
 ```python
 from django.contrib import admin

@@ -55,6 +55,9 @@ plugins:
   - jekyll-include-cache
   - jekyll-redirect-from
 
+feed:
+  collections:
+    - changes
 
 defaults:
   # _posts
