@@ -57,7 +57,7 @@ plugins:
 
 feed:
   collections:
-    - changes
+    - tutorials
 
 defaults:
   # _posts
